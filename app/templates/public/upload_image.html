@@ -1,0 +1,26 @@
+{% extends "public/templates/public_template.html" %}
+
+{% block title %}Upload{% endblock title %}
+
+{% block main %}
+<div class="container">
+    <dir class="row">
+        <div class="col">
+            <h1>Upload</h1>
+            <hr>
+
+            <form action="/upload-image" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label>Select image</label>
+                    <div class="custom-file">
+                        <input type="file" class="cutom-file-input" name="image" id="image">
+                        <label for="image" class="custom-file-label" >Select image</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Upload</button>
+            </form>
+
+        </div>
+    </dir>
+</div>
+{% endblock main %}

@@ -1,0 +1,80 @@
+{% extends "public/templates/public_template.html" %}
+
+{% block title %}Jinja{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Jinja template</h1>
+                <hr>
+                <h4>Variables</h4>
+                <hr>
+                <p>Name: {{my_name}}</p>
+                
+                <h4>Looping</h4>
+                <hr>
+                <ul>
+                    {% for lang in langs %}
+                    <li>{{lang}}</li>
+                    {% endfor %}
+                </ul>
+                
+                <h4>Looping with Index</h4>
+                <hr>
+                <ul>
+                    {% for lang in langs %}
+                    <li>{{loop.index}}: {{lang}}</li>
+                    {% endfor %}
+                </ul>
+                
+                <h4>Looping with Dict</h4>
+                <hr>
+                <ul>
+                    {% for k, v in friends.items() %}
+                    <li>{{k}}: {{v}}</li>
+                    {% endfor %}
+                </ul>
+                
+                <h4>Access list member</h4>
+                <hr>
+                <ul>
+                    {{langs[0]}}
+                </ul>
+                
+                <h4>Access dict member</h4>
+                <hr>
+                    {{friends['Tom']}}
+                
+                    <h4>Access class attrabutes </h4>
+                <hr>
+                    {{my_remote.name}}
+                
+                    <h4>Unpack variables</h4>
+                <hr>
+                {% set a, b  = colors %}
+                <p>{{ a }}</p>
+                <p>{{ b }}</p>
+
+                <h4>Call a funtion</h4>
+                <hr>
+                <p>{{ repeat("Flask is awesome", 10) }}</p>
+
+                <h4>Call a class method</h4>
+                <hr>
+                <p>{{ my_remote.clone() }}</p>
+
+                <h4>Conditionals</h4>
+                <hr>
+                {% if not cool %}
+                    <p>Cool is {{cool}} </p>
+                {% endif %}
+
+
+
+            </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock main %}
