@@ -6,7 +6,7 @@ from werkzeug.utils import secure_filename
 @app.route("/")
 def index():
     print(app.config['ENV'])
-    print(app.config['DB_NAME'])
+    # print(app.config['DB_NAME'])
 
     return render_template("public/index.html")
 
